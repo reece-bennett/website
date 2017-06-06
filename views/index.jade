@@ -1,6 +1,31 @@
 extends layout
 
 block content
-  h3 Welcome to roots!
-  :marked
-    Find tutorials and documentation at http://roots.cx : )
+  .container
+    header#home
+      .innerHeader
+        .title
+          .name Reece Bennett
+          .tagLine Computer Science Student
+        .links
+          a#aboutLink(href="#about") about
+          span.spacer  - 
+          a#projectsLine(href="projects") projects
+          span.spacer  - 
+          a#contactsLink(href="#contact") contact
+    
+    main
+      section#about
+        .innerSection
+          img(src="https://s18.postimg.org/dalbvxl9l/Skiing_crop.jpg")
+          p Hey! I'm a Computer Science student at the University of Birmingham, avid gamer and hobbyist programmer. I aspire to become a professional developer.
+          p I'm proficient in JavaScript/TypeScript, HTML, CSS, Lua and Java and am always on the lookout for new things to learn.
+
+      section#projects
+        .innerSection
+          h1 Projects
+          p Here are some of the projects that I have worked on...
+
+      section#contact
+        .innerSection
+          h1 Contact
