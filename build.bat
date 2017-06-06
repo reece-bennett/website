@@ -1,4 +1,5 @@
 @echo off
+rmdir "public" /s /q
 call roots compile -e production
 cd public
 git init
