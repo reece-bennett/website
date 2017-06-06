@@ -1,6 +1,12 @@
 extends layout
 
 block content
+  #sideMenu
+    a(href="#home") Home
+    a(href="#about") About
+    a(href="#projects") Projects
+    a(href="#contact") Contact
+
   .container
     header#home
       .innerHeader
@@ -29,3 +35,8 @@ block content
       section#contact
         .innerSection
           h1 Contact
+
+  .menuButton(onclick="toggleMenu(this)")
+    .bar1
+    .bar2
+    .bar3
