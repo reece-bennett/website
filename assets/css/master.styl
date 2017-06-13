@@ -93,6 +93,7 @@ header
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
 .name
   font-family: $pacifico;
@@ -100,7 +101,6 @@ header
   line-height: 4.8rem;
   margin-left: -0.1rem;
   color: #333;
-  width: max-content;
 
 .tagLine
   font-size: 1.9rem;
@@ -160,3 +160,13 @@ h1
 
 #contact .socialLink i
   margin-right: 1rem;
+
+@media (max-width: 500px)
+  #sideMenu.open
+    width: 100vw;
+
+  .menuButton.open
+    transform: translateX(0rem);
+
+  #sideMenu.open + .container
+    transform: translateX(-100%);
