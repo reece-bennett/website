@@ -9,9 +9,9 @@ base()
 a
   text-decoration: none;
   color: inherit;
+  transition: color 0.1s;
 
 a:hover
-  font-weight: 700;
   color: $teal;
 
 .menuButton
@@ -148,18 +148,21 @@ h1
   margin-top: 0;
   color: #333;
 
-#contact .socialLink
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+#contact a
+  display: block;
   width: max-content;
   margin: auto;
 
-#contact .socialLink:nth-of-type(n+2)
-  margin-top: 1rem;
+#contact .socialLinks
+  margin: 2.5rem auto;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
 
-#contact .socialLink i
-  margin-right: 1rem;
+#contact .socialLinks a
+  margin: 0 0.5rem;
+  font-size: 2rem;
 
 @media (max-width: 500px)
   #sideMenu.open

@@ -35,22 +35,15 @@ block content
       section#contact
         .innerSection
           h1 Contact
-          a.socialLink(href="mailto:hello@r-bennett.com" target="_blank") 
-            i.fa.fa-2x.fa-envelope
-            | hello@r-bennett.com
-          a.socialLink(href="tel:+447914975356") 
-            i.fa.fa-2x.fa-phone
-            | +447914 075356
-          a.socialLink(href="https://twitter.com/BenneyBoy444") 
-            i.fa.fa-2x.fa-twitter
-            | twitter.com/BenneyBoy444
-          a.socialLink(href="https://codepen.io/PhyscoKillerMonkey/") 
-            i.fa.fa-2x.fa-codepen
-            | codepen.io/PhyscoKillerMonkey
-          a.socialLink(href="https://github.com/PhyscoKillerMonkey") 
-            i.fa.fa-2x.fa-github
-            | github.com/PhyscoKillerMonkey
-          // Linkedin, Youtube and stack overflow
+          a(href="mailto:hello@r-bennett.com" target="_blank") hello@r-bennett.com
+          a(href="tel:+447914975356") +44 7914 075356
+          .socialLinks
+            a.fa.fa-fw.fa-twitter(href="https://twitter.com/BenneyBoy444")
+            a.fa.fa-fw.fa-codepen(href="https://codepen.io/PhyscoKillerMonkey/")
+            a.fa.fa-fw.fa-github(href="https://github.com/PhyscoKillerMonkey")
+            a.fa.fa-fw.fa-linkedin(href="https://www.linkedin.com/in/reece-bennett/")
+            a.fa.fa-fw.fa-youtube(href="https://www.youtube.com/benneyboy444")
+            a.fa.fa-fw.fa-stack-overflow(href="https://stackoverflow.com/users/2303034/benneyboy444")
 
   .menuButton(onclick="toggleMenu(this)")
     .bar1
