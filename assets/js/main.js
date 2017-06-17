@@ -52,3 +52,14 @@ for (var i = 0; i < links.length; i++) {
     l.addEventListener("click", doScrolling.bind(null, l.href.match(reID)[0], 1500));
   }
 }
+
+
+
+// Grid stuff
+var elem = document.querySelector(".grid");
+var msnry = new Masonry(elem, {
+  // options
+  itemSelection: ".grid-item",
+  columnWidth: 250,
+  fitWidth: true
+});
