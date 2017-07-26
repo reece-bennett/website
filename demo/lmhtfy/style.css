@@ -1,0 +1,123 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  font-family: sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[hidden] { visibility: hidden; }
+button[disabled], input[type="submit"][disabled] {
+  cursor: not-allowed;
+}
+
+#header {
+  background: #F5F5F5;
+  margin: 0px;
+  padding: 15px;
+  font-size: 1.8em;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+
+
+#searchContainer {
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 0 10px;
+}
+
+#searchBar {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  width: 100%;
+  height: 36px;
+  padding: 8px;
+  margin: 20px 0;
+}
+
+button, input[type="submit"] {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: max-content;
+  margin: 0 5px;
+}
+
+
+
+
+
+#instructions {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  border: solid 1px #4bc75e;
+  background: #e7f7e9;
+  text-align: center;
+}
+
+#sim-container {
+  box-shadow: 2px 2px 20px #ccc;
+  max-width: 800px;
+  margin: auto;
+}
+
+#sim-header {
+  background: lightblue;
+  padding: 15px;
+}
+
+#sim-addressBar {
+  background: white;
+  padding: 3px;
+  border-radius: 4px;
+  height: 24px;
+}
+
+#sim-logo {
+  margin-right: 10px;
+}
+
+#sim-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 30px;
+}
+
+#sim-searchBar {
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 36px;
+  padding: 8px;
+  flex-grow: 10;
+}
+
+#sim-searchButton {
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: max-content;
+  margin: 0 10px;
+}
+
+#footer {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+#footer div {
+  position: relative;
+  width: max-content;
+  margin: auto;
+  color: #9E9E9E;
+}
+
+a { color: inherit; }
+a::visited { color: inherit; }
