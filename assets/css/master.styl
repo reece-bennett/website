@@ -89,23 +89,23 @@ header
   align-items: center;
   justify-content: center;
 
-.title
+header .title
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 
-.name
+header .name
   font-family: $pacifico;
   font-size: 5rem;
   line-height: 4.8rem;
   margin-left: -0.1rem;
   color: #333;
 
-.tagLine
+header .tagLine
   font-size: 1.9rem;
 
-.links
+header .links
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   width: 100%;
   margin-top: 1rem;
@@ -114,7 +114,7 @@ header
   flex-direction: row;
   justify-content: center;
 
-.links .spacer
+header .links .spacer
   width: 2rem;
   text-align: center;
   cursor: default;
@@ -133,6 +133,15 @@ section
 .innerSection
   margin: auto;
 
+h1
+  font-family: $pacifico;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 0;
+  color: #333;
+
+
+// About section
 #about img
   border: 8px white solid;
   border-radius: 7rem;
@@ -141,25 +150,45 @@ section
   margin: auto;
   margin-bottom: 3rem;
 
-h1
-  font-family: $pacifico;
-  font-size: 4rem;
-  text-align: center;
-  margin-top: 0;
-  color: #333;
 
-// Projects grid
-#projects .innerSection 
-  width: 100%;
+// Projects section
+$mar = 1.5rem;
+$bRad = 2px;
 
-.grid
-  margin: auto;
+.item
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $mar;
+  border-radius: $bRad;
+  box-shadow: 0 3px 6px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.12);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
-.grid-item 
-  width: 250px;
-  height: 150px;
-  background-size: cover;
+.item:hover
+  color: inherit;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.15);
 
+.item img
+  border-radius: $bRad;
+  width: 315px;
+  height: 250px;
+  padding: 10px;
+
+.item .text 
+  font-family: sans-serif;
+  padding: 2rem;
+  padding-left: calc(2rem - 10px);
+  text-align: left;
+  font-size: 1.1rem;
+
+.item .title 
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+
+
+// Contact section
 #contact a
   display: block;
   width: max-content;
@@ -175,6 +204,7 @@ h1
 #contact .socialLinks a
   margin: 0 0.5rem;
   font-size: 2rem;
+
 
 @media (max-width: 500px)
   #sideMenu.open

@@ -30,17 +30,33 @@ block content
       section#projects
         .innerSection
           h1 Projects
-          .grid
-            .grid-item(style="background-image: url(img/lmhtfyLarge.png)") Item 1
-            .grid-item Item 2
-            .grid-item Item 3
-            .grid-item Item 4
-            .grid-item Item 5
-            .grid-item Item 6
-            .grid-item Item 7
-            .grid-item Item 8
-            .grid-item Item 9
-            .grid-item Item 10
+          -
+            var projectList = [
+              {
+                title: "Pixel Alchemy",
+                image: "pixelAlchemyCover.png",
+                description: "A small game made for the first Fantasy Console Jam. The game was coded in Lua using the TIC-80 fantasy console.",
+                link: "https://physcokillermonkey.itch.io/pixel-alchemy"
+              },
+              {
+                title: "Tiny Colonies",
+                image: "tinyColoniesCover.png",
+                description: "A game made for Ludum Dare 38 in 48 hours. You have been tasked with colonising a barren planet. Arriving with limited resources you must build and reap the land to survive.",
+                link: "https://www.lexaloffle.com/bbs/?tid=29203"
+              },
+              {
+                title: "LMHTFY",
+                image: "lmhtfyCover.png",
+                description: "A little spoof page made during downtime at BrumHack 5. 'Let me Hoogle that for you' is a spin of LMGTFY but for the Haskell language search engine.",
+                link: "/demo/lmhtfy"
+              }
+            ]
+          - for project in projectList
+            a.item(href= project.link) 
+              img(src= "img/" + project.image)
+              .text
+                .title= project.title
+                .desc= project.description 
 
       section#contact
         .innerSection
