@@ -1,6 +1,12 @@
 {
-  "name": "-portfolio",
+  "name": "reece-bennett-portfolio",
   "description": "Personal website of Reece Bennett.",
+  "version": "0.0.1",
+  "author": "Reece Bennett",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhyscoKillerMonkey/physcokillermonkey.github.io"
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.9.x",
     "axis": "0.6.x",
