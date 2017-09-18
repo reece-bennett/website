@@ -36,27 +36,47 @@ block content
                 title: "Pixel Alchemy",
                 image: "pixelAlchemyCover.png",
                 description: "A small game made for the first Fantasy Console Jam. The game was coded in Lua using the TIC-80 fantasy console.",
-                link: "https://physcokillermonkey.itch.io/pixel-alchemy"
+                links: [
+                  {
+                    title: "Play",
+                    link: "https://physcokillermonkey.itch.io/pixel-alchemy"
+                  }
+                ]
               },
               {
                 title: "Tiny Colonies",
                 image: "tinyColoniesCover.png",
                 description: "A game made for Ludum Dare Jam 38 in 72 hours. You have been tasked with colonising a barren planet. Arriving with limited resources you must build and reap the land to survive.",
-                link: "https://www.lexaloffle.com/bbs/?tid=29203"
+                links: [
+                  {
+                    title: "Play",
+                    link: "https://www.lexaloffle.com/bbs/?tid=29203"
+                  }
+                ]
               },
               {
                 title: "LMHTFY",
                 image: "lmhtfyCover.png",
                 description: "A little spoof page made during downtime at BrumHack 5. 'Let me Hoogle that for you' is a spin of LMGTFY but for the Haskell language search engine.",
-                link: "/demo/lmhtfy"
+                links: [
+                  {
+                    title: "Demo",
+                    link: "/demo/lmhtfy"
+                  }
+                ]
               }
             ]
           - for project in projectList
-            a.item(href= project.link) 
+            .item
               img(src= "img/" + project.image)
               .text
                 .title= project.title
-                .desc= project.description 
+                .desc= project.description
+                .links
+                  for link in project.links
+                    span.spacer - 
+                    a(href= link.link)= link.title 
+                  span.spacer - 
 
       section#contact
         .innerSection

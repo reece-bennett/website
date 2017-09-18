@@ -156,27 +156,22 @@ $mar = 1.5rem;
 $bRad = 2px;
 
 .item
-  background: #fff;
+  position: relative;
   display: flex;
   flex-direction: row;
   margin-bottom: $mar;
-  border-radius: $bRad;
-  box-shadow: 0 3px 6px rgba(0,0,0,.08), 0 3px 6px rgba(0,0,0,.12);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  padding-bottom: $mar;
 
-.item:hover
-  color: inherit;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.09), 0 6px 6px rgba(0,0,0,0.15);
+.item:not(:last-child)
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 
 .item img
-  border-radius: $bRad;
   width: 315px;
   height: 250px;
-  padding: 10px;
 
 .item .text 
   font-family: sans-serif;
-  padding: 2rem;
+  padding: 1rem;
   padding-left: calc(2rem - 10px);
   text-align: left;
   font-size: 1.1rem;
@@ -186,6 +181,22 @@ $bRad = 2px;
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-align: left;
+
+.item .links
+  position: absolute;
+  bottom: 2.2rem;
+
+.item .links > *
+  float: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+
+.item .spacer
+  cursor: default;
+
+.item a
+  margin: 0 0.5rem;
 
 
 // Contact section
