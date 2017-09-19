@@ -76,6 +76,43 @@ a:hover
   transform: translateX(0rem);
   transition: 0.4s;
 
+#pageFade
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  // "Scrim" gradient from https://css-tricks.com/easing-linear-gradients/
+  background: -webkit-linear-gradient(top,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0.738) 19%,
+    rgba(255,255,255,0.541) 34%,
+    rgba(255,255,255,0.382) 47%,
+    rgba(255,255,255,0.278) 56.5%,
+    rgba(255,255,255,0.194) 65%,
+    rgba(255,255,255,0.126) 73%,
+    rgba(255,255,255,0.075) 80.2%,
+    rgba(255,255,255,0.042) 86.1%,
+    rgba(255,255,255,0.021) 91%,
+    rgba(255,255,255,0.008) 95.2%,
+    rgba(255,255,255,0.002) 98.2%,
+    rgba(255,255,255,0) 100%
+  );
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,1),
+    rgba(255,255,255,0.738) 19%,
+    rgba(255,255,255,0.541) 34%,
+    rgba(255,255,255,0.382) 47%,
+    rgba(255,255,255,0.278) 56.5%,
+    rgba(255,255,255,0.194) 65%,
+    rgba(255,255,255,0.126) 73%,
+    rgba(255,255,255,0.075) 80.2%,
+    rgba(255,255,255,0.042) 86.1%,
+    rgba(255,255,255,0.021) 91%,
+    rgba(255,255,255,0.008) 95.2%,
+    rgba(255,255,255,0.002) 98.2%,
+    rgba(255,255,255,0) 100%
+  );
+
 body
   font-family: $open-sans;
   font-size: 1.2rem;
