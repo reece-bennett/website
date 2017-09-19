@@ -1,7 +1,11 @@
+function byid(id) {
+  return document.getElementById(id);
+}
+
 // Open the side menu and slide the page
-function toggleMenu(button) {
-  button.classList.toggle("open");
-  document.getElementById("sideMenu").classList.toggle("open");
+function toggleMenu() {
+  byid("menuButton").classList.toggle("open");
+  byid("sideMenu").classList.toggle("open");
 }
 
 // Smooth scrolling https://stackoverflow.com/questions/17722497/scroll-smoothly-to-specific-element-on-page

@@ -15,15 +15,16 @@ a:hover
   color: $teal;
   transition: all 0.15s;
 
-.menuButton
+#menuButton
   position: fixed;
   right: 1rem;
   top: 1rem;
   cursor: pointer;
   transform: translateX(0rem);
   transition: 0.4s;
+  z-index: 10;
 
-.menuButton.open
+#menuButton.open
   transform: translateX(-20rem);
 
 .bar1, .bar2, .bar3
@@ -52,6 +53,7 @@ a:hover
   transform: translateX(20rem);
   transition: 0.4s;
   padding-top: 4rem;
+  z-index: 5;
 
 #sideMenu.open
   transform: translateX(0rem);
@@ -112,6 +114,7 @@ a:hover
     rgba(255,255,255,0.002) 98.2%,
     rgba(255,255,255,0) 100%
   );
+  transform: translateX(0rem);
 
 body
   font-family: $open-sans;
@@ -276,7 +279,7 @@ $bRad = 2px;
   #sideMenu.open
     width: 100vw;
 
-  .menuButton.open
+  #menuButton.open
     transform: translateX(0rem);
 
   #sideMenu.open + .container

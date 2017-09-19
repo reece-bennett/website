@@ -2,10 +2,10 @@ extends layout
 
 block content
   #sideMenu
-    a(href="#home") Home
-    a(href="#about") About
-    a(href="#projects") Projects
-    a(href="#contact") Contact
+    a(href="#home", onclick="toggleMenu()") Home
+    a(href="#about", onclick="toggleMenu()") About
+    a(href="#projects", onclick="toggleMenu()") Projects
+    a(href="#contact", onclick="toggleMenu()") Contact
 
   .container
     header#home
@@ -91,7 +91,7 @@ block content
 
   #pageFade
 
-  .menuButton(onclick="toggleMenu(this)")
+  #menuButton(onclick="toggleMenu()")
     .bar1
     .bar2
     .bar3
