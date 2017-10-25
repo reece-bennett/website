@@ -4,6 +4,7 @@ block content
   #sideMenu
     a(href="#home", onclick="toggleMenu()") Home
     a(href="#about", onclick="toggleMenu()") About
+    a(href="#work", onclick="toggleMenu()") Work
     a(href="#projects", onclick="toggleMenu()") Projects
     a(href="#contact", onclick="toggleMenu()") Contact
 
@@ -16,6 +17,8 @@ block content
         .links
           a#aboutLink(href="#about") about
           span.spacer  - 
+          a#workLink(href="#work") work
+          span.spacer  -
           a#projectsLine(href="#projects") projects
           span.spacer  - 
           a#contactsLink(href="#contact") contact
@@ -26,6 +29,13 @@ block content
           img(src="img/skiingCrop.jpg")
           p Hey! I'm a Computer Science student at the University of Birmingham, avid gamer and hobbyist programmer. I aspire to become a professional developer.
           p I'm proficient in JavaScript/TypeScript, HTML, CSS, Lua and Java and am always on the lookout for new things to learn.
+
+      section#work
+        .innerSection
+          h1 Work
+            h2 L3 TRL Technology
+            h3 Industrial Placement
+            p Taken as part of my degree, I started at TRL in the National Security department. My duties varied from basic scripting to dealing with the firmware and hardware of Catapan units.
 
       section#projects
         .innerSection
