@@ -1,0 +1,3 @@
+[submodule "demo/numberconverter"]
+	path = demo/numberconverter
+	url = https://github.com/PhyscoKillerMonkey/number-converter
