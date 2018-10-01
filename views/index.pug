@@ -1,4 +1,4 @@
-extends layout
+extends _layout
 
 block content
   #sideMenu
@@ -77,7 +77,7 @@ block content
                 ]
               }
             ]
-          - for project in projectList
+          for project in projectList
             .item
               img(src= "img/" + project.image)
               .text
