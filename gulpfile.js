@@ -1,3 +1,4 @@
+const browserSync = require("browser-sync");
 const gulp = require("gulp");
 const pug = require("gulp-pug");
 const stylus = require("gulp-stylus");
@@ -17,6 +18,7 @@ const paths = {
   }
 }
 
+// Compile pages and move assets
 function assets() {
   return gulp.src(paths.assets.src)
     .pipe(gulp.dest(paths.assets.dest));
@@ -36,14 +38,34 @@ function views() {
     .pipe(gulp.dest(paths.views.dest));
 }
 
-function watch() {
-  gulp.watch(paths.assets.src, assets);
-  gulp.watch(paths.css.src, css);
-  gulp.watch(paths.views.src, views);
+// Browsersync
+const server = browserSync.create()
+
+function reload(done) {
+  server.reload();
+  done();
 }
 
+function serve(done) {
+  server.init({
+    server: {
+      baseDir: "dist"
+    },
+    open: false
+  });
+  done();
+}
+
+// Auto run when files change
+function watch() {
+  gulp.watch(paths.assets.src, gulp.series(assets, reload));
+  gulp.watch(paths.css.src, gulp.series(css, reload));
+  gulp.watch(paths.views.src, gulp.series(views, reload));
+}
+
+// Combine tasks into build task
 const build = gulp.series(views, css, assets);
 
+// Expose tasks to CLI
 exports.build = build;
-exports.default = build;
-exports.watch = watch;
+exports.default = gulp.series(build, serve, watch);
