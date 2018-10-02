@@ -1,6 +1,7 @@
 const browserSync = require("browser-sync");
 const gulp = require("gulp");
 const pug = require("gulp-pug");
+const rename = require("gulp-rename");
 const stylus = require("gulp-stylus");
 
 const paths = {
@@ -34,6 +35,12 @@ function views() {
   return gulp.src(paths.views.src)
     .pipe(pug({
       pretty: true
+    }))
+    .pipe(rename(path => {
+      if (path.basename != "index") {
+        path.dirname += `/${path.basename}`;
+        path.basename = "index"
+      }
     }))
     .pipe(gulp.dest(paths.views.dest));
 }
