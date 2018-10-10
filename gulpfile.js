@@ -1,4 +1,5 @@
 const browserSync = require("browser-sync");
+const del = require("del");
 const gulp = require("gulp");
 const pug = require("gulp-pug");
 const rename = require("gulp-rename");
@@ -17,6 +18,11 @@ const paths = {
     src: "views/!(_)*.pug",
     dest: "dist"
   }
+}
+
+// Clean assets
+function clean() {
+  return del(["./dist"]);
 }
 
 // Compile pages and move assets
@@ -71,8 +77,9 @@ function watch() {
 }
 
 // Combine tasks into build task
-const build = gulp.series(views, css, assets);
+const build = gulp.series(clean, views, css, assets);
 
 // Expose tasks to CLI
 exports.build = build;
+exports.clean = clean;
 exports.default = gulp.series(build, serve, watch);
