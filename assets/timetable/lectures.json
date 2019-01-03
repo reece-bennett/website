@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Network Security",
+    "location": "CS-UG04",
+    "start": 1100,
+    "end": 1200,
+    "day": "monday"
+  },
+  {
+    "name": "Nature Inspired Search",
+    "location": "GKAP-LT1",
+    "start": 1000,
+    "end": 1100,
+    "day": "tuesday"
+  },
+  {
+    "name": "Principles of Programming Langaugaes",
+    "location": "MLC-UG07",
+    "start": 1200,
+    "end": 1300,
+    "day": "tuesday"
+  },
+  {
+    "name": "Nature Inspired Search",
+    "location": "CS-UG04",
+    "start": 1300,
+    "end": 1400,
+    "day": "tuesday"
+  },
+  {
+    "name": "Network Security",
+    "location": "MENG-G34",
+    "start": 1400,
+    "end": 1500,
+    "day": "tuesday"
+  },
+  {
+    "name": "Network Security",
+    "location": "MENG-G29",
+    "start": 900,
+    "end": 1000,
+    "day": "wednesday"
+  },
+  {
+    "name": "Principles of Programming Langaugaes",
+    "location": "MLC-UG07",
+    "start": 1000,
+    "end": 1100,
+    "day": "wednesday"
+  },
+  {
+    "name": "Intelligent Data Analysis",
+    "location": "EVJ-LT",
+    "start": 1000,
+    "end": 1200,
+    "day": "thursday"
+  },
+  {
+    "name": "Nature Inspired Search",
+    "location": "AWB-WG5",
+    "start": 1300,
+    "end": 1400,
+    "day": "thursday"
+  },
+  {
+    "name": "Principles of Programming Langaugaes",
+    "location": "MLC-UG07",
+    "start": 1500,
+    "end": 1600,
+    "day": "thursday"
+  },
+  {
+    "name": "Network Security",
+    "location": "ExSci-LT1",
+    "start": 900,
+    "end": 1000,
+    "day": "friday"
+  },
+  {
+    "name": "Nature Inspired Search",
+    "location": "CS-UG04 (1-6)",
+    "start": 1300,
+    "end": 1400,
+    "day": "friday"
+  },
+  {
+    "name": "Nature Inspired Search",
+    "location": "CS-LG04 (7-11)",
+    "start": 1600,
+    "end": 1800,
+    "day": "friday"
+  }
+]
