@@ -9,7 +9,7 @@ const stylus = require("gulp-stylus");
 
 const paths = {
   assets: {
-    src: "assets/**/*",
+    src: "assets/**/!(_)*",
     dest: "dist"
   },
   css: {
