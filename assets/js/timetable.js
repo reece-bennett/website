@@ -35,7 +35,7 @@ for (let row = 0; row < times.length; row++) {
 }
 
 // Load lectures
-fetch("lectures.json")
+fetch("/lectures.json")
 .then(res => res.json())
 .then(lectures => {
   for (let i = 0; i < lectures.length; i++) {

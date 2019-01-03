@@ -1,17 +1,19 @@
-/* Colours from https://flatuicolors.com/ */
+@import '_settings'
+
+$light-background = white;
+$dark-background = #ecf0f1;
+$headings = #34495e;
+$body-background = #ff9e43;
+
+$time-width = 4rem;
+$row-height = 4rem;
+
 :root {
-  --light-background: white;
-  --dark-background: #ecf0f1;
-  --dark-blue: #34495e;
-  
   --colour-1: #F96169;
   --colour-2: #F9C945;
   --colour-3: #88C42F;
   --colour-4: #1F82C4;
   --colour-5: #6D5193;
-
-  --time-width: 4rem;
-  --row-height: 4rem;
 }
 
 html, body {
@@ -19,7 +21,7 @@ html, body {
 }
 
 body {
-  background: #ff9e43;
+  background: $body-background;
   color: white;
 }
 
@@ -27,21 +29,21 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: var(--time-width);
+  width: $time-width;
 
   font-size: 0.8rem;
 }
 
 .time {
-  height: var(--row-height);
+  height: $row-height;
 }
 
 #main {
   table-layout: fixed;
-  width: calc(100% - var(--time-width));
+  width: "calc(100% - %s)" % $time-width;
   min-width: 800px;
   max-width: 1200px;
-  margin-left: var(--time-width);
+  margin-left: $time-width;
 }
 
 .day {
@@ -50,18 +52,18 @@ body {
 
 th {
   text-align: center;
-  background: var(--dark-blue);
+  background: $headings;
   font-weight: normal;
 }
 
 td {
-  height: calc(var(--row-height) / 2);
+  height: "calc(%s / 2)" % $row-height;
   padding: 0 0.5rem;
-  background: var(--light-background);
+  background: $light-background;
 }
 
 tr:nth-child(4n+4) > td, tr:nth-child(4n+5) > td {
-  background-color: var(--dark-background);
+  background-color: $dark-background;
 }
 
 .name {
