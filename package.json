@@ -10,7 +10,7 @@
   "devDependencies": {
     "browser-sync": "^2.24.7",
     "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-git": "^2.8.0",
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
