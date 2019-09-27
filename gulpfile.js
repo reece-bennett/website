@@ -1,109 +1,70 @@
-const browserSync = require("browser-sync");
+const { dest, parallel, series, src, watch } = require("gulp");
+const sass = require("gulp-sass");
+const concat = require("gulp-concat");
 const del = require("del");
-const git = require("gulp-git");
-const gulp = require("gulp");
-const moment = require("moment");
-const pug = require("gulp-pug");
-const rename = require("gulp-rename");
-const stylus = require("gulp-stylus");
+const browserSync = require("browser-sync");
+const terser = require("gulp-terser");
 
-const paths = {
-  assets: {
-    src: "assets/**/!(_)*",
-    dest: "dist"
-  },
-  css: {
-    src: "css/!(_)*.styl",
-    dest: "dist/css"
-  },
-  repo: "dist",
-  views: {
-    src: "views/!(_)*.pug",
-    dest: "dist"
-  }
-}
+sass.compiler = require("node-sass");
 
-// Clean assets
 function clean() {
-  return del([paths.repo]);
+  return del("build");
 }
 
-// Compile pages and move assets
-function assets() {
-  return gulp.src(paths.assets.src)
-    .pipe(gulp.dest(paths.assets.dest));
+function html() {
+  return src("html/*.html")
+  .pipe(dest("build"));
 }
 
 function css() {
-  return gulp.src(paths.css.src)
-    .pipe(stylus())
-    .pipe(gulp.dest(paths.css.dest));
+  return src("css/*.scss", { sourcemaps: true })
+  .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
+  .pipe(dest("build/css", { sourcemaps: "." }));
 }
 
-function views() {
-  return gulp.src(paths.views.src)
-    .pipe(pug({
-      pretty: true
-    }))
-    .pipe(rename(path => {
-      if (path.basename != "index") {
-        path.dirname += `/${path.basename}`;
-        path.basename = "index"
-      }
-    }))
-    .pipe(gulp.dest(paths.views.dest));
+function js() {
+  return src("js/*.js", { sourcemaps: true })
+    .pipe(concat("script.min.js"))
+    .pipe(terser())
+  .pipe(dest("build/js", { sourcemaps: "." }));
 }
 
-// Browsersync
-const server = browserSync.create()
+function assets() {
+  return src("assets/**/*")
+    .pipe(dest("build"));
+}
 
-function reload(done) {
+/*
+* Browser-Sync
+*/
+const server = browserSync.create();
+
+function bs_reload(done) {
   server.reload();
   done();
 }
 
-function serve(done) {
+function bs_serve(done) {
   server.init({
     server: {
-      baseDir: paths.repo
+      baseDir: "build"
     },
     open: false
   });
   done();
 }
 
-// Auto run when files change
-function watch() {
-  gulp.watch(paths.assets.src, gulp.series(assets, reload));
-  gulp.watch(paths.css.src, gulp.series(css, reload));
-  gulp.watch(paths.views.src, gulp.series(views, reload));
+function bs_watch() {
+  watch("assets", series(assets, bs_reload));
+  watch("html/*.html", series(html, bs_reload));
+  watch("css/*.scss", series(css, bs_reload));
+  watch("js/*.js", series(js, bs_reload));
 }
 
-// Deploy to master branch
-function init() {
-  return git.init({cwd: paths.repo})
-}
-
-function add() {
-  const dateString = moment().local().format("YYYY-MM-DD hh:mm:ss A");
-
-  return gulp.src("dist/*")
-    .pipe(git.add({cwd: paths.repo}))
-    .pipe(git.commit(`Site updated: ${dateString}`, {cwd: paths.repo}));
-}
-
-function push(done) {
-  git.push("git@github.com:PhyscoKillerMonkey/physcokillermonkey.github.io.git", "master", {args: "--force", cwd: paths.repo}, (err) => {
-    if (err) throw err;
-    done();
-  });
-}
-
-// Combine tasks into build task
-const build = gulp.series(clean, views, css, assets);
-
-// Expose tasks to CLI
-exports.build = build;
+/*
+* Expose tasks to gulp CLI
+*/
+exports.build = series(clean, parallel(html, css, js, assets));
 exports.clean = clean;
-exports.default = gulp.series(build, serve, watch);
-exports.deploy = gulp.series(build, init, add, push);;
+
+exports.default = series(exports.build, bs_serve, bs_watch);
