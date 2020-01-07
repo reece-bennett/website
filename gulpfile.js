@@ -1,8 +1,6 @@
 const browserSync = require("browser-sync");
 const del = require("del");
-const git = require("gulp-git");
 const gulp = require("gulp");
-const moment = require("moment");
 const pug = require("gulp-pug");
 const rename = require("gulp-rename");
 const stylus = require("gulp-stylus");
@@ -10,22 +8,21 @@ const stylus = require("gulp-stylus");
 const paths = {
   assets: {
     src: "assets/**/!(_)*",
-    dest: "dist"
+    dest: "docs"
   },
   css: {
     src: "css/!(_)*.styl",
-    dest: "dist/css"
+    dest: "docs/css"
   },
-  repo: "dist",
   views: {
     src: "views/!(_)*.pug",
-    dest: "dist"
+    dest: "docs"
   }
 }
 
 // Clean assets
 function clean() {
-  return del([paths.repo]);
+  return del([paths.views.dest]);
 }
 
 // Compile pages and move assets
@@ -79,26 +76,6 @@ function watch() {
   gulp.watch(paths.views.src, gulp.series(views, reload));
 }
 
-// Deploy to master branch
-function init() {
-  return git.init({cwd: paths.repo})
-}
-
-function add() {
-  const dateString = moment().local().format("YYYY-MM-DD hh:mm:ss A");
-
-  return gulp.src("dist/*")
-    .pipe(git.add({cwd: paths.repo}))
-    .pipe(git.commit(`Site updated: ${dateString}`, {cwd: paths.repo}));
-}
-
-function push(done) {
-  git.push("git@github.com:PhyscoKillerMonkey/physcokillermonkey.github.io.git", "master", {args: "--force", cwd: paths.repo}, (err) => {
-    if (err) throw err;
-    done();
-  });
-}
-
 // Combine tasks into build task
 const build = gulp.series(clean, views, css, assets);
 
@@ -106,4 +83,3 @@ const build = gulp.series(clean, views, css, assets);
 exports.build = build;
 exports.clean = clean;
 exports.default = gulp.series(build, serve, watch);
-exports.deploy = gulp.series(build, init, add, push);;

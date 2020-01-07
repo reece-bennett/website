@@ -1,0 +1,657 @@
+[
+    {
+        "level": 1,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0},
+            "cupMax": {"x": 0, "y": 0},
+            "cupMin": {"x": 0, "y": 0}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 10,
+                "y": 5,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 10,
+                "y": 6.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 11.7,
+                "y": 5,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 10.3,
+                "y": 5.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "cannonBall",
+                "x": 2.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 2,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0},
+            "cupMax": {"x": 0, "y": 0},
+            "cupMin": {"x": 0, "y": 0}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 11,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 11,
+                "y": 8.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 12.7,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 11.3,
+                "y": 7.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "wallTop",
+                "x": 6,
+                "y": 0,
+                "width": 3,
+                "height": 4,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallBottom",
+                "x": 6,
+                "y": 6,
+                "width": 3,
+                "height": 4,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "cannonBall",
+                "x": 2.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 3,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0},
+            "cupMin": {"x": 0, "y": 0},
+            "cupMax": {"x": 0, "y": 0}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 11.5,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 11.5,
+                "y": 8.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 13.2,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 11.8,
+                "y": 7.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "wallTop",
+                "x": 9,
+                "y": -0.1,
+                "width": 2,
+                "height": 2.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallBottom",
+                "x": 9,
+                "y": 4,
+                "width": 2,
+                "height": 6.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "bounceWall",
+                "x": 15.5,
+                "y": 0,
+                "width": 2,
+                "height": 10,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "restitution": 1
+            },
+            {
+                "name": "cannonBall",
+                "x": 2.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 4,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0.01},
+            "cupMin": {"x": 11, "y": 4},
+            "cupMax": {"x": 11, "y": 7}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 11,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 11,
+                "y": 8.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 12.7,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 11.3,
+                "y": 7.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "cannonBall",
+                "x": 2.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 5,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0},
+            "cupMin": {"x": 11, "y": 4},
+            "cupMax": {"x": 11, "y": 7}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 13,
+                "y": 8,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 13,
+                "y": 9.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 14.7,
+                "y": 8,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 13.3,
+                "y": 8.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "wallTop1",
+                "x": 6.5,
+                "y": -0.1,
+                "width": 2,
+                "height": 3.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallTop2",
+                "x": 8.4,
+                "y": -0.1,
+                "width": 2,
+                "height": 4.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallTop3",
+                "x": 10.3,
+                "y": -0.1,
+                "width": 2,
+                "height": 5.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallBottom1",
+                "x": 6,
+                "y": 5,
+                "width": 2,
+                "height": 5.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallBottom2",
+                "x": 7.9,
+                "y": 6,
+                "width": 2,
+                "height": 4.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wallBottom3",
+                "x": 9.8,
+                "y": 7,
+                "width": 2,
+                "height": 3.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "cannonBall",
+                "x": 2.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 6,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0, "y": 0},
+            "cupMin": {"x": 11, "y": 4},
+            "cupMax": {"x": 11, "y": 7}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 12,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 12,
+                "y": 8.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 13.7,
+                "y": 7,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 12.3,
+                "y": 7.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "wall1",
+                "x": 4,
+                "y": 4,
+                "width": 2,
+                "height": 6.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "wall2",
+                "x": 8,
+                "y": -10.1,
+                "width": 2,
+                "height": 16.1,
+                "colour": "#455A64",
+                "doPhysics": false
+            },
+            {
+                "name": "floor",
+                "x": 5.9,
+                "y": 9.5,
+                "width": 10.1,
+                "height": 100,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "restitution": 1.3
+            },
+            {
+                "name": "cannonBall",
+                "x": 1.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    },
+
+
+
+    {
+        "level": 7,
+        "variables": {
+            "gravity": {
+                "x": "0",
+                "y": "0.005"
+            },
+            "drag": {
+                "x": "0.001",
+                "y": "0.001"
+            },
+            "cupSpeed": {"x": 0.05, "y": 0},
+            "cupMin": {"x": 7, "y": 8.5},
+            "cupMax": {"x": 12, "y": 8.5}
+        },
+        "objects": [
+            {
+                "name": "cupLeft",
+                "x": 8.5,
+                "y": 8,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupBottom",
+                "x": 8.5,
+                "y": 9.4,
+                "width": 2,
+                "height": 0.3,
+                "colour": "#6D4C41",
+                "doPhysics": false,
+                "restitution": 0.5
+            },
+            {
+                "name": "cupRight",
+                "x": 10.2,
+                "y": 8,
+                "width": 0.3,
+                "height": 1.5,
+                "colour": "#6D4C41",
+                "doPhysics": false
+            },
+            {
+                "name": "cupGoal",
+                "x": 8.8,
+                "y": 8.9,
+                "width": 1.4,
+                "height": 0.5,
+                "colour": "#795548",
+                "doPhysics": false,
+                "invisible": false
+            },
+            {
+                "name": "wall1",
+                "x": 6,
+                "y": 4,
+                "width": 1,
+                "height": 6.1,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "friction": 0.6
+            },
+            {
+                "name": "wall2",
+                "x": 6.9,
+                "y": 4,
+                "width": 2.6,
+                "height": 3.5,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "friction": 0.6
+            },
+            {
+                "name": "wall3",
+                "x": 11.5,
+                "y": 4,
+                "width": 2.6,
+                "height": 3.5,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "friction": 0.6
+            },
+            {
+                "name": "wall4",
+                "x": 14,
+                "y": 4,
+                "width": 1,
+                "height": 6.1,
+                "colour": "#455A64",
+                "doPhysics": false,
+                "friction": 0.6
+            },
+            {
+                "name": "cannonBall",
+                "x": 1.4,
+                "y": 7.4,
+                "originalX": 2.4,
+                "originalY": 7.4,
+                "width": 0.2,
+                "height": 0.2,
+                "colour": "#009688",
+                "doPhysics": false
+            }
+        ]
+    }
+]

@@ -1,9 +1,6 @@
-### Dist folder ###
-dist
 
-
-# Created by https://www.gitignore.io/api/vim,node,macos,windows,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=vim,node,macos,windows,visualstudiocode
+# Created by https://www.gitignore.io/api/node,macos,windows,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=node,macos,windows,visualstudiocode
 
 ### macOS ###
 # General
@@ -111,6 +108,18 @@ typings/
 # nuxt.js build output
 .nuxt
 
+# rollup.js default build output
+dist/
+
+# Uncomment the public line if your project uses Gatsby
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# https://create-react-app.dev/docs/using-the-public-folder/#docsNav
+# public
+
+# Storybook build outputs
+.out
+.storybook-out
+
 # vuepress build output
 .vuepress/dist
 
@@ -123,25 +132,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-Sessionx.vim
-
-# Temporary
-.netrwhist
-*~
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
+# Temporary folders
+tmp/
+temp/
 
 ### VisualStudioCode ###
 .vscode/*
@@ -180,4 +173,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/vim,node,macos,windows,visualstudiocode
+# End of https://www.gitignore.io/api/node,macos,windows,visualstudiocode
