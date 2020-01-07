@@ -1,15 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Reece Bennett</title>
-  <link rel="stylesheet" href="css/index.css">
-</head>
-<body>
-  <h1>Hello world!</h1>
-  <p>This is the portfolio website of Reece Bennett.</p>
-  <script src="js/script.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reece Bennett</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <header class="shown">
+      <div id="navbar">
+        <h1>
+          <a href="#splash">Reece Bennett</a>
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="navbar-button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="splash">
+        <div>
+          <div>
+            <h1>Reece Bennett</h1>
+            <h2>Graduate Software Engineer</h2>
+          </div>
+          <hr />
+          <nav>
+            <a href="#about">About</a>
+            <span>|</span>
+            <a href="#projects">Projects</a>
+            <span>|</span>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </section>
+
+      <section id="about">
+        <div>
+          <img src="img/profilePicture.jpg" />
+          <p>
+            Hey! I'm a Computer Science Graduate from the University of
+            Birmingham, currently a Software Engineer at Kainos. An avid gamer
+            and budding programmer, I'm always on the lookout for new things to
+            learn.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div>
+          <h1>Projects</h1>
+
+          <article class="card">
+            <img src="img/pixelAlchemyCover.png" />
+            <div class="description">
+              <h1>Pixel Alchemy</h1>
+              <h2>TIC-80 | Lua</h2>
+              <p>
+                A small game made for the first Fantasy Console Jam. The game
+                was coded in Lua using the TIC-80 fantasy console.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/numberConverterCover.png" />
+            <div class="description">
+              <h1>Number Converter</h1>
+              <h2>HTML5 | CSS | JavaScript</h2>
+              <p>
+                A utility application to help convert between a few number
+                formats.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/tinyColoniesCover.png" />
+            <div class="description">
+              <h1>Tiny Colonies</h1>
+              <h2>PICO-8 | Lua</h2>
+              <p>
+                A game made for Ludum Dare Jam 38 in 72 hours. You have been
+                tasked with colonising a barren planet. Arriving with limited
+                resources you must build and reap the land to survive.
+              </p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="img/lmhtfyCover.png" />
+            <div class="description">
+              <h1>LMHTFY</h1>
+              <h2>HTML5 | CSS | JavaScript</h2>
+              <p>
+                A little spoof page made during downtime at BrumHack 5. 'Let me
+                Hoogle that for you' is a spin off of LMGTFY, but for the
+                Haskell language search engine Hoogle.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.min.js"></script>
+  </body>
 </html>
