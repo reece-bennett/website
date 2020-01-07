@@ -10,7 +10,4 @@ Personal website of Reece Bennett.
 ## Building
 
 - `gulp build` or `gulp` to build and watch using BrowserSync
-
-## Deploying
-
-- `gulp deploy` builds the website then force pushes to the master branch
+- Github pages serves from the `docs/` directory so just push after building
