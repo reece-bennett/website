@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Reece Bennett</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header class="shown">
-      <div id="navbar">
-        <h1>
-          <a href="#splash">Reece Bennett</a>
-        </h1>
+    <header>
+      <div>
+        <a id="header-title" href="#splash">Reece Bennett</a>
         <nav>
           <ul>
             <li>
@@ -28,28 +27,28 @@
           </ul>
         </nav>
       </div>
-      <div id="navbar-button">
+      <span id="navbar-button">
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </span>
     </header>
 
     <main>
       <section id="splash">
-        <div>
-          <div>
-            <h1>Reece Bennett</h1>
-            <h2>Graduate Software Engineer</h2>
-          </div>
-          <hr />
-          <nav>
+        <div id="splash-inner">
+          <h1 id="splash-title">
+            <span id="splash-name">Reece Bennett</span>
+            <span id="splash-tagline">Graduate Software Engineer</span>
+          </h1>
+          <hr>
+          <div id="splash-links">
             <a href="#about">About</a>
             <span>|</span>
             <a href="#projects">Projects</a>
             <span>|</span>
             <a href="#contact">Contact</a>
-          </nav>
+          </div>
         </div>
       </section>
 
@@ -57,7 +56,7 @@
         <div>
           <img src="img/profilePicture.jpg" />
           <p>
-            Hey! I'm a Computer Science Graduate from the University of
+            Hi! I'm a Computer Science Graduate from the University of
             Birmingham, currently a Software Engineer at Kainos. An avid gamer
             and budding programmer, I'm always on the lookout for new things to
             learn.
@@ -67,13 +66,15 @@
 
       <section id="projects">
         <div>
-          <h1>Projects</h1>
+          <h2 class="section-title">Projects</h2>
 
           <article class="card">
             <img src="img/pixelAlchemyCover.png" />
             <div class="description">
-              <h1>Pixel Alchemy</h1>
-              <h2>TIC-80 | Lua</h2>
+              <a href="#">
+                <h3 class="title">Pixel Alchemy</h3>
+              </a>
+              <span class="technologies">TIC-80 | Lua</span>
               <p>
                 A small game made for the first Fantasy Console Jam. The game
                 was coded in Lua using the TIC-80 fantasy console.
@@ -84,8 +85,8 @@
           <article class="card">
             <img src="img/numberConverterCover.png" />
             <div class="description">
-              <h1>Number Converter</h1>
-              <h2>HTML5 | CSS | JavaScript</h2>
+              <h3 class="title">Number Converter</h3>
+              <span class="technologies">HTML5 | CSS | JavaScript</span>
               <p>
                 A utility application to help convert between a few number
                 formats.
@@ -96,8 +97,8 @@
           <article class="card">
             <img src="img/tinyColoniesCover.png" />
             <div class="description">
-              <h1>Tiny Colonies</h1>
-              <h2>PICO-8 | Lua</h2>
+              <h3 class="title">Tiny Colonies</h3>
+              <span class="technologies">PICO-8 | Lua</span>
               <p>
                 A game made for Ludum Dare Jam 38 in 72 hours. You have been
                 tasked with colonising a barren planet. Arriving with limited
@@ -109,8 +110,8 @@
           <article class="card">
             <img src="img/lmhtfyCover.png" />
             <div class="description">
-              <h1>LMHTFY</h1>
-              <h2>HTML5 | CSS | JavaScript</h2>
+              <h3 class="title">LMHTFY</h3>
+              <span class="technologies">HTML5 | CSS | JavaScript</span>
               <p>
                 A little spoof page made during downtime at BrumHack 5. 'Let me
                 Hoogle that for you' is a spin off of LMGTFY, but for the
@@ -118,6 +119,16 @@
               </p>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p id="contact-links">
+            <a href="mailto:reece.bennett1@gmail.com" target="_blank">reece.bennett1@gmail.com</a>
+            <a href="tel:+447914975356">+44 7914 975356</a>
+          </p>
         </div>
       </section>
     </main>

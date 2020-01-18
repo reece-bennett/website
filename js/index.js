@@ -1,21 +1,20 @@
 const $ = selectors => document.querySelector(selectors);
 
 const header = $("header");
-// const headerHeight = header.offsetHeight;
-// const showNavbarAt = $("#about").offsetTop - headerHeight;
+const headerHeight = header.offsetHeight;
+const yPos = $("#about").offsetTop - headerHeight;
 
-// function checkShowHeader() {
-//   if (window.pageYOffset >= showNavbarAt) {
-//     header.classList.add("shown");
-//   } else {
-//     header.classList.remove("shown");
-//   }
-// }
+function checkHeader() {
+  if (window.pageYOffset >= yPos) {
+    header.classList.add("shown");
+  } else {
+    header.classList.remove("shown");
+  }
+};
 
-// window.onscroll = checkShowHeader;
-// checkShowHeader();
+window.onscroll = checkHeader;
+checkHeader();
 
 $("#navbar-button").addEventListener("click", () => {
-  console.log("Opening");
   header.classList.toggle("open");
 });
