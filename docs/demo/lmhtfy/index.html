@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>LMHTFY</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="lmhtfy.js"></script>
+  </head>
+
+  <body>
+    <h1 id="header">lmhtfy</h1>
+
+    <div id="searchContainer">
+      <img src="./hoogle.png">
+      <form action="javascript:getLink();">
+        <input id="searchBar" type="text" placeholder="Search..." autocomplete="off">
+        
+        <div id="buttons">
+          <input id="getLink" type="submit" value="Get link" disabled>
+          <button type="button" id="preview" onclick="doPreview()" disabled>Preview</button>
+          <button type="button" id="searchAgain" onclick="doSearchAgain()" hidden>Search again</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="instructions" hidden>
+      Step 1: Go to Hoogle
+    </div>
+
+    <div id="sim-container" hidden>
+      <div id="sim-header">
+        <div id="sim-addressBar"></div>
+      </div>
+      <div>
+        <div id="sim-page" hidden>
+          <img id="sim-logo" src="./hoogle.png">
+          <div id="sim-searchBar"></div>
+          <div id="sim-searchButton">Search</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"><div>Created by <a href="http://www.r-bennett.com">Reece Bennett</a> for Brumhack 5.0</div></div> 
+  </body>
+
+</html>
