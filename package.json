@@ -1,19 +1,21 @@
 {
-  "name": "reece-bennett-portfolio",
+  "name": "portfolio",
+  "version": "1.0.0",
   "description": "Personal website of Reece Bennett.",
-  "version": "0.0.1",
-  "author": "Reece Bennett",
   "repository": {
     "type": "git",
-    "url": "https://github.com/reece-bennett/portfolio-website"
+    "url": "git+https://github.com/reece-bennett/reece-bennett.github.io.git"
   },
+  "author": "Reece Bennett",
+  "license": "MIT",
+  "private": true,
   "devDependencies": {
     "browser-sync": "^2.26.7",
-    "del": "^3.0.0",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-stylus": "^2.7.0",
-    "pug": "^2.0.3"
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.2.0",
+    "node-sass": "^4.13.1"
   }
 }
