@@ -8,18 +8,18 @@ const terser = require("gulp-terser");
 sass.compiler = require("node-sass");
 
 function clean() {
-  return del("build");
+  return del("docs");
 }
 
 function html() {
   return src("html/*.html")
-  .pipe(dest("build"));
+  .pipe(dest("docs"));
 }
 
 function css() {
   return src("css/*.scss", { sourcemaps: true })
   .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-  .pipe(dest("build/css", { sourcemaps: "." }))
+  .pipe(dest("docs/css", { sourcemaps: "." }))
   .pipe(server.stream());
 }
 
@@ -27,12 +27,12 @@ function js() {
   return src("js/*.js", { sourcemaps: true })
     .pipe(concat("script.min.js"))
     .pipe(terser())
-  .pipe(dest("build/js", { sourcemaps: "." }));
+  .pipe(dest("docs/js", { sourcemaps: "." }));
 }
 
 function assets() {
   return src("assets/**/*")
-    .pipe(dest("build"));
+    .pipe(dest("docs"));
 }
 
 /*
@@ -43,7 +43,7 @@ const server = browserSync.create();
 function bs_serve(done) {
   server.init({
     server: {
-      baseDir: "build"
+      baseDir: "docs"
     },
     open: false
   });
