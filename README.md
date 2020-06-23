@@ -6,4 +6,4 @@ Personal website of Reece Bennett.
 
 - `npm install`
 - `gulp build` to just build, or `gulp` to build and serve using BrowserSync
-- GitHub pages deploys the `docs` directory from the master branch
+- `gulp deploy` to build the site and push to the `gh-pages` branch

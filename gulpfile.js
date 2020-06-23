@@ -1,25 +1,27 @@
 const { dest, parallel, series, src, watch } = require("gulp");
-const sass = require("gulp-sass");
+const browserSync = require("browser-sync");
 const concat = require("gulp-concat");
 const del = require("del");
-const browserSync = require("browser-sync");
+const git = require("gulp-git");
+const moment = require("moment");
+const sass = require("gulp-sass");
 const terser = require("gulp-terser");
 
 sass.compiler = require("node-sass");
 
 function clean() {
-  return del("docs");
+  return del("build");
 }
 
 function html() {
   return src("html/*.html")
-  .pipe(dest("docs"));
+  .pipe(dest("build"));
 }
 
 function css() {
   return src("css/*.scss", { sourcemaps: true })
   .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
-  .pipe(dest("docs/css", { sourcemaps: "." }))
+  .pipe(dest("build/css", { sourcemaps: "." }))
   .pipe(server.stream());
 }
 
@@ -27,12 +29,12 @@ function js() {
   return src("js/*.js", { sourcemaps: true })
     .pipe(concat("script.min.js"))
     .pipe(terser())
-  .pipe(dest("docs/js", { sourcemaps: "." }));
+  .pipe(dest("build/js", { sourcemaps: "." }));
 }
 
 function assets() {
   return src("assets/**/*")
-    .pipe(dest("docs"));
+    .pipe(dest("build"));
 }
 
 /*
@@ -43,7 +45,7 @@ const server = browserSync.create();
 function bs_serve(done) {
   server.init({
     server: {
-      baseDir: "docs"
+      baseDir: "build"
     },
     open: false
   });
@@ -63,6 +65,40 @@ function bs_watch() {
 }
 
 /*
+* Git / Github Pages
+*/
+function cleanRepo() {
+  return del("repo");
+}
+
+function clone(done) {
+  git.clone("git@github.com:reece-bennett/portfolio-website.git", {args: "-n -b gh-pages repo"}, err => {
+    if (err) throw err;
+    done();
+  });
+}
+
+function copyFiles() {
+  return src("build/**/*")
+    .pipe(dest("repo"));
+}
+
+function commit() {
+  const dateString = moment().local().format("YYYY-MM-DD hh:mm:ss A");
+
+  return src("repo/*")
+    .pipe(git.add({cwd: "repo"}))
+    .pipe(git.commit(`Site built ${dateString}`, {cwd: "repo"}));
+}
+
+function push(done) {
+  git.push("origin", "gh-pages", {cwd: "repo"}, err => {
+    if (err) throw err;
+    done();
+  })
+} 
+
+/*
 * Expose tasks to gulp CLI
 */
 exports.assets = assets;
@@ -71,5 +107,7 @@ exports.css = css;
 exports.html = html;
 exports.js = js;
 exports.build = series(clean, parallel(html, css, js, assets));
+
+exports.deploy = series(exports.build, cleanRepo, clone, copyFiles, commit, push, cleanRepo);
 
 exports.default = series(exports.build, bs_serve, bs_watch);
