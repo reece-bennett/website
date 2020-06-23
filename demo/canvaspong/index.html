@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pong</title>
+        <style type="text/css">
+            body {
+                margin: 0px;
+                font-family: sans-serif;
+                color: white;
+                background-color: #FFCC80;
+                overflow: hidden;
+                text-align: center;
+            }
+            canvas {
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                -webkit-filter: blur(5px);
+            }
+            #debug {
+                z-index: 1;
+                position: absolute;
+                background-color: cadetblue;
+                padding: 5px;
+                border-radius: 5px;
+                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+                opacity: 0.75;
+            }
+            #powerUpContainer {
+                z-index: 1;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+            }
+            .powerUp {
+                z-index: 1;
+                font-weight: bolder;
+                font-size: 2em;
+                text-align: center;
+                background-color: rgba(100, 100, 100, 0.5);
+                padding: 10px 30px;
+                margin-top: 10px;
+            }
+            #menuButtonContainer {
+                z-index: 1;
+                position: fixed;
+                left: 50%;
+                bottom: 0;
+                transform: translate(-50%);
+                -webkit-filter: blur(5px);
+            }
+            .button {
+                z-index: 1;
+                padding: 5px 10px 5px 10px;
+                border-radius: 10px;
+                background-color: cadetblue;
+                font-weight: bolder;
+                font-size: 1.2em;
+                user-select: none;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                cursor: pointer;
+                box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+                transition: top 0.5s;
+            }
+            .hButton {
+                float: left;
+                margin: 0 5px 0 5px;
+            }
+            .vButton {
+                margin-top: 5px;
+            }
+            .button:hover {
+                position: relative;
+                top: 1px;
+            }
+            #menuBackground {
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            .menuScreen {
+                z-index: 1;
+                display: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                background-color: rgba(100, 100, 100, 0.5);
+                padding: 40px;
+            }
+            #mainTitle {
+                font-weight: bolder;
+                font-size: 4em;
+                margin-bottom: 20px;
+                width: 408px;
+            }
+            .buttonContainer {
+                z-index: 1;
+                display: inline-block;
+                padding-top: 1px;
+            }
+            .secondaryTitle {
+                font-weight: bolder;
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+        <link rel="icon" sizes="144x144" href="favicon192.png">
+        <meta name="mobile-web-app-capable" content="yes">
+    </head>
+    <body>
+        <div id="debug">
+            Debug info goes here:
+        </div>
+
+        <div id="powerUpContainer">
+        </div>
+
+        <div id="menuButtonContainer">
+            <div class="button hButton" onclick="openMenu()">Menu</div>
+            <div class="button hButton" onclick="restartGame()">Restart</div>
+        </div>
+
+        <div class="menuScreen" id="gameOverContainer">
+            <div class="secondaryTitle" id="gameOverText"></div>
+            <div class="buttonContainer">
+                <div class="button" onclick="restartGame()">Restart</div>
+            </div>
+        </div>
+
+        <div class="menuScreen" id="startGameContainer">
+            <div class="secondaryTitle">Ready to play?</div>
+            <div class="buttonContainer">
+                <div class="button" onclick="startGame()">Start!</div>
+            </div>
+        </div>
+
+        <div id="menuBackground">
+
+            <div class="menuScreen" id="startScreenContainer">
+                <div id="mainTitle">Canvas Pong</div>
+                <div class="buttonContainer">
+                    <div class="button hButton" onclick="computerPlayer = true; closeMenu()">1 Player</div>
+                    <div class="button hButton" onclick="computerPlayer = false;closeMenu()">2 Player</div>
+                    <div class="button hButton" onclick="changeMenu('main', 'options')">Options</div>
+                    <div class="button hButton" onclick="changeMenu('main', 'help')">Help</div>
+                </div>
+            </div>
+
+            <div class="menuScreen" id="optionsContainer">
+                <div class="secondaryTitle">Options</div>
+                <div class="buttonContainer">
+                    <div class="button vButton" onclick="toggleDebug()">Toggle Debug Info</div>
+                    <div class="button vButton" onclick="toggleFPS()">Toggle FPS Meter</div>
+                    <div class="button vButton" onclick="changeMenu('options', 'main')">Go Back</div>
+                </div>
+            </div>
+
+            <div class="menuScreen" id="helpContainer">
+                <div class="secondaryTitle">Help</div>
+                <p>To start the game click either 1 Player or 2 Player. 1 Player mode puts the player against a computer, 2 Player allows you to play with another human.</p>
+                <div style="float: left; display: inline-block; width: 50%;">
+                    <h2>Player 1 Controls</h2>
+                    Move paddle upwards: <b>W</b><br>
+                    Move paddle down: <b>S</b><br>
+                </div>
+                <div style="float: right; display: inline-block; width: 50%;">
+                    <h2>Player 2 Controls</h2>
+                    Move paddle upwards: <b>&#x25B2;</b><br>
+                    Move paddle down: <b>&#x25BC;</b><br>
+                </div>
+                Restart game: <b>Spacebar</b><br>
+                <div class="buttonContainer">
+                    <div class="button vButton" onclick="changeMenu('help', 'main')">Go Back</div>
+                </div>
+        </div>
+
+        <script src="classes.js"></script>
+        <script src="collision.js"></script>
+        <script src="engine.js"></script>
+        <script src="fpsmeter.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
