@@ -33,7 +33,7 @@ function js() {
 }
 
 function assets() {
-  return src("assets/**/*")
+  return src(["assets/**/*", "favicon/generated/*"])
     .pipe(dest("build"));
 }
 
