@@ -4,10 +4,8 @@ const concat = require("gulp-concat");
 const del = require("del");
 const git = require("gulp-git");
 const moment = require("moment");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require("sass"));
 const terser = require("gulp-terser");
-
-sass.compiler = require("node-sass");
 
 function clean() {
   return del("build");
