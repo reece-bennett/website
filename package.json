@@ -2,6 +2,11 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "Personal website of Reece Bennett.",
+  "scripts": {
+    "serve": "gulp",
+    "build": "gulp build",
+    "deploy": "gulp deploy"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reece-bennett/reece-bennett.github.io.git"
