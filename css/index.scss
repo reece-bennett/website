@@ -175,7 +175,7 @@ header {
   text-transform: uppercase;
   background: $background-dark;
   color: $text-light;
-  
+
   a:hover {
     text-decoration: none;
     color: $accent;
@@ -242,15 +242,22 @@ header {
     margin-bottom: 1.5em;
   }
 
-  img {
-    object-fit: cover;
-    border-radius: 5px 5px 0 0;
+  a > img {
     width: 100%;
-    cursor: pointer;
 
     @media (min-width: $mobile-breakpoint) {
       width: 300px;
       flex: 0 0 auto;
+      border-radius: 5px 0 0 5px;
+    }
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+
+    @media (min-width: $mobile-breakpoint) {
       border-radius: 5px 0 0 5px;
     }
   }
