@@ -70,7 +70,7 @@ function cleanRepo() {
 }
 
 function clone(done) {
-  git.clone("git@github.com:reece-bennett/portfolio-website.git", {args: "-n -b gh-pages repo"}, err => {
+  git.clone("git@github.com:reece-bennett/website.git", {args: "-n -b gh-pages repo"}, err => {
     if (err) throw err;
     done();
   });
@@ -94,7 +94,7 @@ function push(done) {
     if (err) throw err;
     done();
   })
-} 
+}
 
 /*
 * Expose tasks to gulp CLI
